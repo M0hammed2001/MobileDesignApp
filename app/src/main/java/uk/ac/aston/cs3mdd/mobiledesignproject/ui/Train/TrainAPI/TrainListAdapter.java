@@ -1,6 +1,7 @@
 package uk.ac.aston.cs3mdd.mobiledesignproject.ui.Train.TrainAPI;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,15 +53,21 @@ public class TrainListAdapter extends RecyclerView.Adapter<TrainListAdapter.Trai
             notifyDataSetChanged();
         }
 
-        class TrainViewHolder extends RecyclerView.ViewHolder {
+        class TrainViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
             public final TextView TraindestinationView;
             final TrainListAdapter mAdapter;
             public TrainService trainService;
 
             public TrainViewHolder(@NonNull View itemView, TrainListAdapter adapter) {
                 super(itemView);
+                itemView.setOnClickListener(this);
                 TraindestinationView = itemView.findViewById(R.id.username);
                 this.mAdapter = adapter;
+            }
+
+            @Override
+            public void onClick(View view) {
+                Log.i("MS", "You Selected " + trainService.toString());
             }
         }
 
