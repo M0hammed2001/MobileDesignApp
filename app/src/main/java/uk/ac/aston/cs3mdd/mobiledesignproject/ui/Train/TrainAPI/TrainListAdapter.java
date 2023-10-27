@@ -38,7 +38,7 @@ public class TrainListAdapter extends RecyclerView.Adapter<TrainListAdapter.Trai
             TrainService trainService = mTrainList.get(position);
             holder.trainService = trainService;
 //            Destination destination =  trainService.getAreServicesAvailable();
-            String displaydestination = trainService.getDestination() + " " + trainService.getOperator();// + " " + trainService.getNrccMessages();
+            String displaydestination = trainService.getDestination() + " " + trainService.getOperator()+ " " + trainService.getEtd()+ " " + trainService.getStd() + " " + trainService.getNrccMessages();
             holder.TraindestinationView.setText(displaydestination);
         }
 
