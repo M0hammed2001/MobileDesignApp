@@ -74,11 +74,13 @@ public class TrainService implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append(getOperator());
         sb.append(" ");
-        sb.append(getEtd());
+        String ArivalTime = getEtd() != null ? getEtd() : "No Arival Time";
+        sb.append(ArivalTime);
         sb.append(" ");
         sb.append(getDestination().get(0).toString());
         sb.append(" ");
-        sb.append(getNrccMessages());
+        String nrc = getNrccMessages() != null ? getNrccMessages() : "No Notice Message";
+        sb.append(nrc);
         return sb.toString();
     }
 }
